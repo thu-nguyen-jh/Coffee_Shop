@@ -7,11 +7,10 @@ body, p {
 body, p, h1 {
   margin: 0;
 }
+
 header {
   position: sticky;
   top: 0;
-}
-.header {
   padding: 24px 80px;
   background-color: #fcfcfc;
   box-shadow: 2px 4px 5px #ccc;
@@ -19,30 +18,91 @@ header {
   justify-content: space-between;
   align-items: center;
   @media (max-width: 500px) {
-    padding: 8px;
+    padding: 10px;
+
   }
 }
-.nav-items {
+.icon {
+  color: #bbb;
+  display: block;
+  padding: 4px;
+  cursor: pointer;
+  @media (max-width: 2000px) {
+    display:none;
+  }
+  @media (max-width: 500px) {
+    display:block
+  }
+}
+.icon:hover {
+  color: black
+}
+.phone-nav-items {
+  position: absolute; 
+  right:0px;
+  top:60px;
+  display:none;
+  width:100px;
+}
+.phone-nav-items div {
+  font-size:14px;
+  /* background:#6D1600; */
+  background: #fcfcfc;
+  padding: 10px;
+  cursor: pointer;
+}
+.phone-nav-items div:hover{
+  background: #ccc;
+}
+.phone-nav-items a {
+  text-decoration: none;
+  color: #6D1600;
+}
+.phone-nav-items:target {
+  display: block
+}
+.desktop-nav-items {
   display: flex;
   justify-content: space-between;
   gap: 56px;
   @media (max-width: 500px) {
-    gap: 15px
+    gap: 15px; 
+    display: none;
   }
 }
 
-.nav-items p {
+.desktop-nav-items p {
   line-height: 24px;
   @media (max-width: 500px) {
     font-size:10px
   }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-product {
+  display: none;
+  flex-direction:column;
+  gap:8px;
+  top:40px;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-product {
+  display: flex;
 }
 .nav-tools {
   display: flex;
   justify-content: space-between;
   gap:16px;
   @media (max-width: 500px) {
-    gap: 10px
+    gap: 15px
   }
 }
 
@@ -83,7 +143,7 @@ header {
   }
 
 }
-.product-btn {
+.product-button {
   width: 363px;
   background-color: #6D1600;
   border-radius: 0 32px;
@@ -100,21 +160,48 @@ header {
     gap: 8px
   }
 }
-.product-btn:hover {
+//Tooltip
+.tooltip {
+  position:relative;
+  display: inline-block;
+  border: 1px solid transparent;
+
+}
+.tooltip .tooltiptext {
+
+  display:none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: -110px;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext {
+  display: block;
+}
+.product-button:hover {
   background-color: #bf2a04;
 }
-.product-btn:active {
+.product-button:active {
   background-color: #bf2a04;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 @media only screen and (max-width: 500px) {
-  .product-btn img {
+  .product-button img {
     width: 25px;
     height: 24px;
   }
 }
-.product-btn p {
+.product-button p {
   font-family: Playfair Display SC;
   font-size: 24px;
   font-weight: 400;
@@ -241,7 +328,7 @@ gap:10px    }
     font-size: 18px
     }
 }
-.product-sw-btn {
+.product-switch-button {
   border-radius: 40px;
   background-color: #F6F6F6;
   padding: 8px;
@@ -251,7 +338,7 @@ gap:10px    }
     }
 
 }
-.btn-option {
+.button-option {
   border-radius: 40px;
   padding: 16px 40px;
   gap: 10px;
@@ -266,7 +353,7 @@ gap:10px    }
     }
 
 }
-.product-sw-btn div:first-child{
+.product-switch-button div:first-child{
   background-color: white;
 }
 
@@ -285,7 +372,7 @@ margin-top: 20px
 margin: auto    }
 
 }
-.item-img {
+.product-item > img {
   border-radius: 0 40px;
   width: 302px;
   height: 240px;
@@ -338,10 +425,9 @@ line-height: 22.4px;
   width: 24px;
   height: 24px;
 }
-.review {
+
+.rating > p {
   opacity: 0.72;
-}
-.review p {
   width: 105px;
   height: 22px;
   font-size: 16px;
@@ -424,7 +510,7 @@ text-align: center ;
     line-height:20px;
   }
 }
-.read-more-btn {
+.read-more-button {
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -441,7 +527,7 @@ text-align: center ;
   border-radius: 0px 12px;
   }
 }
-/* .read-more-btn:after {
+/* .read-more-button:after {
   content: "";
   background: #bf2a04;
   display: block;
@@ -454,13 +540,13 @@ text-align: center ;
   transition: all 0.8s
 }
 
-.read-more-btn:active:after {
+.read-more-button:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
   transition: 0s
 } */
-.read-more-btn p {
+.read-more-button p {
   font-family: Playfair Display SC;
   font-size: 24px;
   font-weight: 400;
@@ -621,7 +707,7 @@ font-size: 24px;
 font-weight: 600;
 line-height: 33.6px;
 }
-.detail-btn {
+.detail-button {
   align-self: end;
   display: flex;
   align-items: center;
@@ -629,7 +715,7 @@ padding: 0px 16px;
 gap: 8px;
 
 }
-.detail-btn > p {
+.detail-button > p {
 font-size: 16px;
 font-weight: 400;
 line-height: 22.4px;
@@ -637,7 +723,7 @@ text-align: center;
 
 }
 
-.footer {
+footer {
   background: #282A3A;
   display: flex;
   padding: 80px;
@@ -771,7 +857,7 @@ line-height: 30px;
 color: #FFFFFF66;
 
 }
-.send-btn {
+.send-button {
 padding: 16px 64px;
 gap: 10px;
 border-radius: 8px;

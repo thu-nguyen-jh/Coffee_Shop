@@ -8,25 +8,43 @@
   <link href='https://fonts.googleapis.com/css?family=Playfair Display SC' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Coffee Shop</title>
   
 </head>
 <body>
   <header>
-    <div class="header">
-      <img src="assets/logo.png"></img>
-      <div class="nav-items">
-        <p>Products</p>
-        <p>About us</p>
-        <p>Testimonial</p>
-        <p>Contact</p>
+    <img src="assets/logo.png"></img>
+    <div class="desktop-nav-items">
+      <div class="dropdown">
+
+          <p>Products</p> 
+        <div class="dropdown-product">
+          <p>Product 1</p>
+          <p>Product 2</p>
+          <p>Product 3</p>
+        </div>
       </div>
-      <div class="nav-tools">
-        <img src="assets/iconSearch.png"></img>
-        <img src="assets/shoppingBag.png"></img>
-      </div>
+      <p>About us</p>
+      <p>Testimonial</p>
+      <p>Contact</p>
     </div>
+    
+    <div class="nav-tools">
+      <img src="assets/iconSearch.png"></img>
+      <img src="assets/shoppingBag.png"></img>
+      <a href="#nav" class="icon">
+        <i class="fa fa-bars"></i>
+      </a>
+      
+    </div>
+    <div2 id="nav"class="phone-nav-items">
+      <div><a href="#">Products</a></div>
+      <div><a href="#">About us</a></div>
+      <div><a href="#">Testimonial</a></div>
+      <div><a href="#">Contact</a></div>
+    </div2>
   </header>
   
   <main>
@@ -35,9 +53,12 @@
         <h1>Enjoy Your Favorite Coffee with Ngopi</h1>
         <p>Discover tranquility at Ngopi a sanctuary for unwinding,
         where your evenings are perfected with relaxation and rich flavors.</p>
-        <div class="product-btn">
-          <p>EXPLORE PRODUCT</p>
-          <img src="assets/arrowDownRight.png"/>
+        <div class="tooltip">
+          <span class="tooltiptext">Tooltip text</span>
+          <div class="product-button">
+            <p>EXPLORE PRODUCT</p>
+            <img src="assets/arrowDownRight.png"/>
+          </div>
         </div>
       </div>
       
@@ -81,16 +102,14 @@
         <p>Our products</p>
         <h2>From Top Quality Materials</h2>
       </div>
-      <div class="product-sw-btn">
-        <div class="btn-option">Latte</div>
-        <div class="btn-option">Robusta</div>
-        <div class="btn-option">Acabia</div>
+      <div class="product-switch-button">
+        <div class="button-option">Latte</div>
+        <div class="button-option">Robusta</div>
+        <div class="button-option">Acabia</div>
       </div>
       <div class="products-list">
         <div class="product-item">
-          <div class="item-img">
-            <img src="assets/coffee1.png">
-          </div>
+          <img src="assets/coffee1.png">
           <div class="item-content">
             <h1>Chocolate Latte</h1>
             <div class="rating">
@@ -98,9 +117,9 @@
                 <img src="assets/star.png"/>
                 <p>4.9</p>
               </div>
-              <div class="reivew">
-                <p>(360 reviews)</p>  
-              </div>
+            
+              <p>(360 reviews)</p>  
+          
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
             <div class="item-price">
@@ -110,9 +129,7 @@
           </div>
         </div>
         <div class="product-item">
-          <div class="item-img">
-            <img src="assets/coffee2.png">
-          </div>
+          <img src="assets/coffee2.png">
           <div class="item-content">
             <h1>Chocolate Latte</h1>
             <div class="rating">
@@ -120,9 +137,7 @@
                 <img src="assets/star.png"/>
                 <p>5.0</p>
               </div>
-              <div class="reivew">
-                <p>(180 reviews)</p>  
-              </div>
+              <p>(180 reviews)</p>  
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
             <div class="item-price">
@@ -132,9 +147,7 @@
           </div>
         </div>
         <div class="product-item">
-          <div class="item-img">
-            <img src="assets/coffee3.png">
-          </div>
+          <img src="assets/coffee3.png">
           <div class="item-content">
             <h1>Chocolate Latte</h1>
             <div class="rating">
@@ -142,9 +155,7 @@
                 <img src="assets/star.png"/>
                 <p>4.8</p>
               </div>
-              <div class="reivew">
-                <p>(450 reviews)</p>  
-              </div>
+              <p>(450 reviews)</p>  
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
             <div class="item-price">
@@ -155,9 +166,7 @@
           </div>
         </div>
         <div class="product-item">
-          <div class="item-img">
-            <img src="assets/coffee4.png">
-          </div>
+          <img src="assets/coffee4.png">
           <div class="item-content">
             <h1>Chocolate Latte</h1>
             <div class="rating">
@@ -165,9 +174,7 @@
                 <img src="assets/star.png"/>
                 <p>4.9</p>
               </div>
-              <div class="reivew">
-                <p>(390 reviews)</p>  
-              </div>
+              <p>(390 reviews)</p>  
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Scelerisque urna vel sit dolor fringilla</p>
             <div class="item-price">
@@ -201,7 +208,7 @@
             Integer sed pretium odio lectus at malesuada sed eget nunc.</p>
           <p>Lorem ipsum dolor sit amet consectetur. 
             Scelerisque urna vel sit dolor fringilla volutpat lectus amet.</p>
-          <div class="read-more-btn">
+          <div class="read-more-button">
             <p>READ MORE</p>
             <img src="assets/arrowDownRight.png"/>
           </div>
@@ -310,7 +317,7 @@
           <p class="blog-description">
             Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
           </p>
-          <div class="detail-btn">
+          <div class="detail-button">
             <p> View details </p>
             <img src="assets/caretRight.png"/>
           </div>
@@ -330,7 +337,7 @@
           <p class="blog-description">
             Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
           </p>
-          <div class="detail-btn">
+          <div class="detail-button">
             <p> View details </p>
             <img src="assets/caretRight.png"/>
           </div>
@@ -350,7 +357,7 @@
           <p class="blog-description">
             Lorem ipsum dolor sit amet consectetur. Est tempor morbi pellentesque.
           </p>
-          <div class="detail-btn">
+          <div class="detail-button">
             <p> View details </p>
             <img src="assets/caretRight.png"/>
           </div>
@@ -358,7 +365,7 @@
 
 
       </div>
-      <div class="read-more-btn">
+      <div class="read-more-button">
         <p>READ MORE</p>
         <img src="assets/arrowDownRight.png"/>
       </div>
@@ -367,7 +374,6 @@
   </main>
 
   <footer>
-    <div class="footer">
       <div class="footer-info">
         <div class="shop-name">
           <img src="assets/logoW.png">
@@ -381,7 +387,7 @@
       <div class="footer-feat">
         <div class="footer-sub-feat">
           <div class="link">
-            <div class="feat-title">Quick Links</div>
+            <p class="feat-title">Quick Links</p>
             <div class="sub-feat-list">
               <p class="sub-feat-item">Services</p>
               <p class="sub-feat-item">Portfolio</p>
@@ -390,7 +396,7 @@
             </div>
           </div>
           <div class="resources">
-            <div class="feat-title">Resources</div>
+            <p class="feat-title">Resources</p>
             <div class="sub-feat-list">
               <p class="sub-feat-item">Support</p>
               <p class="sub-feat-item">Privacy Policy</p>
@@ -398,7 +404,7 @@
             </div>
           </div>
           <div class="media">
-            <div class="feat-title">Social Media</div>
+            <p class="feat-title">Social Media</p>
             <div class="sub-media">
               <img src="assets/fb.png" >
               <img src="assets//twit.png" >
@@ -409,19 +415,18 @@
           </div>
         </div>
         <div class="subcribe">
-          <div class="feat-title">Subcribe</div>
+          <p class="feat-title">Subcribe</p>
           <div class="send-mail">
             <div class="mail-input">
               <img src="assets/mail.png">
               <p>name@domain.com</p>
             </div>
-            <div class="send-btn">
+            <div class="send-button">
               Send
             </div>
           </div>
         </div>
       </div>
-    </div>
   </footer>
 
 </body>
